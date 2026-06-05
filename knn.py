@@ -28,6 +28,7 @@ model.fit(X_train, y_train)
 # ─────────────────────────────────────────────────────────────────────────────
 y_pred = model.predict(X_test)
 y_prob = model.predict_proba(X_test)[:, 1]
+y_pred_train = model.predict(X_train)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 3. METRIKE
@@ -41,6 +42,9 @@ print("Precision :", round(precision_score(y_test, y_pred), 4))
 print("Recall    :", round(recall_score(y_test, y_pred), 4))
 print("F1-score  :", round(f1_score(y_test, y_pred), 4))
 print("ROC-AUC   :", round(roc_auc_score(y_test, y_prob), 4))
+print()
+print("Tačnost na TRENING skupu:", round(accuracy_score(y_train, y_pred_train), 4))
+print("Tačnost na TEST skupu    :", round(accuracy_score(y_test, y_pred), 4))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 4. KROS-VALIDACIJA
@@ -94,7 +98,6 @@ disp.plot(cmap='Oranges', colorbar=False)
 plt.title('Matrica konfuzije — k-NN (k={})'.format(najbolji_k))
 plt.tight_layout()
 plt.savefig('knn_matrica_konfuzije.png')
-plt.show()
 
 # ROC kriva
 fpr, tpr, _ = roc_curve(y_test, y_prob_final)
@@ -110,7 +113,6 @@ plt.title('ROC kriva — k-NN')
 plt.legend()
 plt.tight_layout()
 plt.savefig('knn_roc_kriva.png')
-plt.show()
 
 # F1 u zavisnosti od k
 plt.figure(figsize=(7, 5))
@@ -121,7 +123,6 @@ plt.title('Podesavanje hiperparametra k — k-NN')
 plt.xticks(k_vrijednosti)
 plt.tight_layout()
 plt.savefig('knn_hiperparametri.png')
-plt.show()
 
 # Cuvanje modela
 joblib.dump(finalni_model, 'model_knn.pkl')
