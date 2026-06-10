@@ -44,7 +44,7 @@ print("F1-score  :", round(f1_score(y_test, y_pred), 4))
 print("ROC-AUC   :", round(roc_auc_score(y_test, y_prob), 4))
 print()
 print("Tačnost na TRENING skupu:", round(accuracy_score(y_train, y_pred_train), 4))
-print("Tačnost na TEST skupu    :", round(accuracy_score(y_test, y_pred), 4))
+print("Tačnost na TEST skupu:", round(accuracy_score(y_test, y_pred), 4))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 4. KROS-VALIDACIJA

@@ -27,7 +27,6 @@ s.heatmap(korelacija, annot=True, fmt='.2f', cmap='RdYlGn',
 plt.title("Korelaciona matrica karakteristika")
 plt.tight_layout()
 plt.savefig('eda_korelacija.png')
-plt.show()
 
 # Ispis jakih korelacija (>0.8 ili <-0.8), iskljucujuci dijagonalu
 print("\n=== Jake korelacije (|r| > 0.8) ===")
@@ -56,7 +55,6 @@ for j in range(i + 1, len(axes)):
 plt.suptitle('Boxplot karakteristika po klasama')
 plt.tight_layout()
 plt.savefig('eda_boxplots.png')
-plt.show()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 4. DISTRIBUCIJA KLASA
@@ -70,7 +68,6 @@ plt.ylabel('Broj uzoraka')
 plt.xticks(rotation=0)
 plt.tight_layout()
 plt.savefig('eda_distribucija_klasa.png')
-plt.show()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 5. SCATTER PLOT — I_s vs Brzina (najjaca separacija)
@@ -88,7 +85,6 @@ plt.title('Separacija klasa: I_s vs Brzina')
 plt.legend()
 plt.tight_layout()
 plt.savefig('eda_scatter.png')
-plt.show()
 
 print("\nEDA zavrsena. Sacuvane slike:")
 print("  eda_korelacija.png")
