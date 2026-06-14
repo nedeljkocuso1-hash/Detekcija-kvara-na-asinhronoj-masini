@@ -57,9 +57,6 @@ print("Std devijacija    :", round(cv_scores.std(), 4))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 5. PODEŠAVANJE HIPERPARAMETARA — parametar C
-#    C kontrolise regularizaciju:
-#    - mali C → jaca regularizacija, jednostavniji model
-#    - veliki C → slabija regularizacija, model se vise prilagođava podacima
 # ─────────────────────────────────────────────────────────────────────────────
 C_vrijednosti = [0.001, 0.01, 0.1, 1, 10, 100]
 f1_scores = []

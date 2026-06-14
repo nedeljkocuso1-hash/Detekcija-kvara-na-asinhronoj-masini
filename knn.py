@@ -57,9 +57,6 @@ print("Std devijacija    :", round(cv_scores.std(), 4))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 5. PODESAVANJE HIPERPARAMETARA — trazenje najboljeg k
-#    Mali k → model je osjetljiv na sum (overfitting)
-#    Veliki k → model je previse uopsten (underfitting)
-#    Trazimo k koji daje najbolji F1 na kros-validaciji
 # ─────────────────────────────────────────────────────────────────────────────
 k_vrijednosti = range(1, 21)
 f1_scores = []

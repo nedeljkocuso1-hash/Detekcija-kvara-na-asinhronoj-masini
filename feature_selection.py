@@ -46,8 +46,6 @@ evaluiraj("k-NN — svi atributi",
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 2. METODA 1 — SelectKBest (statisticki test F)
-#    Mjeri koliko svaki atribut individualno korelira sa klasom
-#    Biramo top 4 od 8 atributa
 # ─────────────────────────────────────────────────────────────────────────────
 print("\n=== SelectKBest (top 4 atributa) ===")
 
@@ -74,8 +72,6 @@ evaluiraj("k-NN — SelectKBest", y_test, knn_kb.predict(X_test_kb))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 3. METODA 2 — RFE (Recursive Feature Elimination)
-#    Model sam rangira atribute tako sto iterativno uklanja
-#    najmanje vazne sve dok ne ostane zadani broj atributa
 # ─────────────────────────────────────────────────────────────────────────────
 print("\n=== RFE — Recursive Feature Elimination (top 4 atributa) ===")
 
@@ -113,7 +109,6 @@ plt.xlabel('F-score')
 plt.title('Vaznost atributa — SelectKBest (F-test)')
 plt.tight_layout()
 plt.savefig('fs_selectkbest.png')
-plt.show()
 
 # Poređenje F1 scoreova — svi vs odabrani atributi
 metode = ['Svi atributi', 'SelectKBest', 'RFE']
@@ -145,7 +140,6 @@ plt.legend()
 plt.ylim(0, 1.1)
 plt.tight_layout()
 plt.savefig('fs_poređenje.png')
-plt.show()
 
 print("\nFeature selection zavrsena. Sacuvane slike:")
 print("  fs_selectkbest.png")

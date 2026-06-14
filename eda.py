@@ -11,10 +11,10 @@ df = df.drop(columns=['T'])
 # ─────────────────────────────────────────────────────────────────────────────
 # 1. PROVJERA ANOMALIJA I NEDOSTAJUCIH VRIJEDNOSTI
 # ─────────────────────────────────────────────────────────────────────────────
-print("=== Nedostajuce vrijednosti ===")
+print("Nedostajuce vrijednosti")
 print(df.isnull().sum())
 
-print("\n=== Osnovna statistika ===")
+print("\nOsnovna statistika")
 print(df.describe())
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -29,7 +29,7 @@ plt.tight_layout()
 plt.savefig('eda_korelacija.png')
 
 # Ispis jakih korelacija (>0.8 ili <-0.8), iskljucujuci dijagonalu
-print("\n=== Jake korelacije (|r| > 0.8) ===")
+print("\nJake korelacije (|r| > 0.8)")
 for col in korelacija.columns:
     for idx in korelacija.index:
         if col != idx:
