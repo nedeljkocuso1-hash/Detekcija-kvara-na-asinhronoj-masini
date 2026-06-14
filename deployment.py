@@ -12,8 +12,6 @@ warnings.filterwarnings(action='ignore', category=UserWarning, module='sklearn')
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 1. EXPORT MODELA
-#    Modeli su vec sacuvani u prethodnim skriptama, ali ovdje
-#    ucitavamo oba i cuvamo zajedno sa scalerom u jedan paket
 # ─────────────────────────────────────────────────────────────────────────────
 scaler = joblib.load('scaler.pkl')
 model_lr  = joblib.load('model_logisticka_regresija.pkl')
@@ -30,8 +28,6 @@ print("Modeli exportovani: motor_fault_detection.pkl")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 2. FUNKCIJA ZA PREDIKCIJU
-#    Ovo je srce deployment-a — prima sirove vrijednosti senzora,
-#    skalira ih i vraca predikciju sa vjerovatnocom
 # ─────────────────────────────────────────────────────────────────────────────
 def predikuj(U_s, I_s, s, Vib, THD, P_f, Brzina, Temp, model='logisticka'):
     """
