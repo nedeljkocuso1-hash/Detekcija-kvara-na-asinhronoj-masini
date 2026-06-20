@@ -16,6 +16,8 @@ warnings.filterwarnings(action='ignore', category=UserWarning, module='sklearn')
 scaler = joblib.load('scaler.pkl')
 model_lr  = joblib.load('model_logisticka_regresija.pkl')
 model_knn = joblib.load('model_knn.pkl')
+model_knn.n_neighbors = 5
+model_knn.weights = 'distance'
 
 paket = {
     'scaler'     : scaler,
