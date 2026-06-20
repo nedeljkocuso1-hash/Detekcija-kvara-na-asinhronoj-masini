@@ -40,4 +40,4 @@ uv run deployment.py
 
 ## Rezultati
 
-Oba modela (logistička regresija i k-NN) postižu 100% tačnost na test skupu, što je posledica jasne fizičke separacije između zdravog rada i kvara u simulacionim podacima.
+Oba modela (logistička regresija i k-NN) postižu 100% tačnost na test skupu, što je posljedica jasne fizičke separacije između zdravog rada i kvara u simulacionim podacima.
