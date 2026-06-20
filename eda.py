@@ -91,3 +91,15 @@ print("  eda_korelacija.png")
 print("  eda_boxplots.png")
 print("  eda_distribucija_klasa.png")
 print("  eda_scatter.png")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 6. KORELACIJA IZMEDJU SVIH ATRIBUTA
+# ─────────────────────────────────────────────────────────────────────────────
+corr_sa_klasom = df.drop(columns=['Klasa']).corrwith(df['Klasa']).abs().sort_values()
+
+plt.figure(figsize=(8, 5))
+corr_sa_klasom.plot(kind='barh', color='steelblue', edgecolor='black')
+plt.xlabel('Apsolutna vrijednost korelacije')
+plt.title('Atributi po korelaciji sa klasom')
+plt.tight_layout()
+plt.savefig('atributi_korelacija_klasa.png')
